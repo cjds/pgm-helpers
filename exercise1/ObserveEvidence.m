@@ -32,14 +32,20 @@ for i = 1:size(E, 1),
             if (x > F(j).card(indx) || x < 0 ),
                 error(['Invalid evidence, X_', int2str(v), ' = ', int2str(x)]);
             end;
-
+            % for k = 1:length(F(j).card(indx)),
+            %     F(j).
+            %     SetValueOfAssignment(F(j), )
+            % end;
+            % indx
+            assignments = IndexToAssignment(1:prod(F(j).card), F(j).card);
+            F(j) = SetValueOfAssignment(F(j), assignments(assignments(:,indx) != x,:), 0);
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             % YOUR CODE HERE
             % Adjust the factor F(j) to account for observed evidence
             % Hint: You might find it helpful to use IndexToAssignment
             %       and SetValueOfAssignment
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            
+            % SetValueOfAssignment()
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 				% Check validity of evidence / resulting factor
